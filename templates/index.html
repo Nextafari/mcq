@@ -15,13 +15,13 @@
             margin-top: 50px;
         }
 
-        /*.container {
+        /* .container {
             margin-top: 60px;
             margin-left: 20px;
             background-color: rgba(62, 128, 0, 0.363);
             color: black;
             box-shadow: 10px 10px gray;
-        }*/
+        } */
     </style>
     <form method="POST" action="">
         {% csrf_token %}
@@ -177,20 +177,28 @@
             remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset 
             sheets containing Lorem Ipsum passages, and more recently with desktop publishing software  ?   
         </p>
-        <input type="radio" id="foo" name="question-9" value="answer-1">
-        <label for="answer-9">Answer</label><br>
-        <input type="radio" id="foo" name="question-9" value="answer-2">
-        <label for="answer-9">Answer</label><br>
-        <input type="radio" id="foo" name="question-9" value="answer-3">
-        <label for="answer-9">Answer</label><br>
-        <input type="radio" id="foo" name="question-9" value="answer-4">
-        <label for="answer-9">Answer</label><br>
+        <input type="radio" id="foo" name="question-10" value="answer-1">
+        <label for="answer-10">Answer</label><br>
+        <input type="radio" id="foo" name="question-10" value="answer-2">
+        <label for="answer-10">Answer</label><br>
+        <input type="radio" id="foo" name="question-10" value="answer-3">
+        <label for="answer-10">Answer</label><br>
+        <input type="radio" id="foo" name="question-10" value="answer-4">
+        <label for="answer-10">Answer</label><br>
 
 
 
         <br>
         <br>
         <button type="submit" class="btn btn-primary" name="submit" value="OK">Submit</button>
+        <br>
+        <br>
+
+       <!--Score box-->
+       <!--<div class="container p-5 mb-5 rounded">
+            <h3>Score</h3><br><br>
+            <p>{{ your_score }}</p>
+        </div>-->
 
     </form>
     
