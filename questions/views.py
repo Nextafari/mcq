@@ -29,8 +29,9 @@ def home_view(request):
                 score = 0  
                 if value in answers:
                     print('yes')
-                    for value in answers:
+                    for i in value:
                        score +=5
+                       print(score)
                         
                 print(value, "second")
             return HttpResponse(
