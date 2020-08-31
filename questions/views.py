@@ -21,7 +21,7 @@ def home_view(request):
             q10 = request.POST.get("question-10")
             values = [q1, q2, q3, q4, q5, q6, q7, q8, q9, q10]
             answers = [
-                'answer-1', 'answer-2', 'answer-3', 'answer-4', 'answer-1,' 'answer-2', 'answer-3',
+                'answer-1', 'answer-2', 'answer-3', 'answer-4', 'answer-1', 'answer-2', 'answer-3',
                 'answer-4', 'answer-1', 'answer-2'
             ]
             print(values, "first")
