@@ -25,13 +25,12 @@ def home_view(request):
                 '4', '1', '2'
             ]
             print(values, "first")
-            for value in values:
-                score = 0  
+            score = 0
+            for value in values:  
                 if value in answers:
                     print('yes')
-                    for i in value:
-                       score +=5
-                       print(score)
+                    score +=5
+                    print(score)
                         
                 print(value, "second")
             return HttpResponse(
