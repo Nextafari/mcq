@@ -6,7 +6,7 @@ import time
 def home_view(request):
     global your_score
     score = 0
-    your_score = HttpResponse("you scored " + str(score) + '%')
+    your_score = HttpResponse("you scored " + str(score*2) + '%')
     if request.method == "POST":
         if request.POST.get("submit"):
             q1 = request.POST.get("question-1")
