@@ -29,9 +29,7 @@ def home_view(request):
             for value in values:
                 if value in answers:
                     score +=5
-                    print('yes', score)
-                elif score < 37.5:
-                    print(f"Your score, {score*2}")
+                elif score < 37.5:   
                     return HttpResponse(f"Your score, {score*2}. Your did not reach the cutoff mark")
             return HttpResponse(
                 '<div class="container p-5 mb-5 rounded"><h3>Score</h3><br><br><p><style>.container{margin-top: 60px;background-color: rgba(62, 128, 0, 0.363);color: black;margin-left: 20px;box-shadow: 10px 10px gray;}</style></p></div>' + str(score*2)
