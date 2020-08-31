@@ -27,12 +27,29 @@ def home_view(request):
             print(values, "first")
             for value in values:
                 for answer in answers:
-                    
-                    if value == answer:
-                        score = 0
+                    score = 0
+                    if value[0] == answer[0]:    
                         score +=5
-                        # Using the HTTPResponse to return strings
-                        print(answer)
+                    if value[1] == answer[1]:    
+                        score +=5
+                    if value[2] == answer[2]:   
+                        score +=5
+                    if value[3] == answer[3]:   
+                        score +=5
+                    if value[4] == answer[4]:
+                        score +=5
+                    if value[5] == answer[5]: 
+                        score +=5
+                    if value[6] == answer[6]:    
+                        score +=5
+                    if value[7] == answer[7]:    
+                        score +=5
+                    # if value[8] == answer[8]:    
+                    #     score +=5
+                    # if value[9] == answer[9]:    
+                    #     score +=5
+                    #     # Using the HTTPResponse to return strings
+                    #     print(answer)
                 
                 print(value, "second")
             return HttpResponse(
