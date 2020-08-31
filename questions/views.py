@@ -25,63 +25,21 @@ def home_view(request):
                 'answer-4', 'answer-1', 'answer-2'
             ]
             print(values, "first")
-            if values[0] == answers[0]:
-                # Using the HTTPResponse to return strings
-                score = 0
-                score +=50
-                print(values, "second")
-                return HttpResponse(
-                    '<div class="container p-5 mb-5 rounded"><h3>Score</h3><br><br><p><style>.container{margin-top: 60px;background-color: rgba(62, 128, 0, 0.363);color: black;margin-left: 20px;box-shadow: 10px 10px gray;}</style></p></div>' + str(score)
-                )
-            elif values[1] == answers[1]:
-                score +=10
-                return HttpResponse(
-                    '<div class="container p-5 mb-5 rounded"><h3>Score</h3><br><br><p><style>.container{margin-top: 60px;background-color: rgba(62, 128, 0, 0.363);color: black;margin-left: 20px;box-shadow: 10px 10px gray;}</style></p></div>' + str(score)
-                )
-            elif values[2] == answers[2]:
-                score +=15
-                return HttpResponse(
-                    '<div class="container p-5 mb-5 rounded"><h3>Score</h3><br><br><p><style>.container{margin-top: 60px;background-color: rgba(62, 128, 0, 0.363);color: black;margin-left: 20px;box-shadow: 10px 10px gray;}</style></p></div>' + str(score)
-                )
-            elif values[3] == answers[3]:
-                score +=20
-                return HttpResponse(
-                    '<div class="container p-5 mb-5 rounded"><h3>Score</h3><br><br><p><style>.container{margin-top: 60px;background-color: rgba(62, 128, 0, 0.363);color: black;margin-left: 20px;box-shadow: 10px 10px gray;}</style></p></div>' + str(score)
-                )
-            elif values[4] == answers[4]:
-                score +=25
-                return HttpResponse(
-                    '<div class="container p-5 mb-5 rounded"><h3>Score</h3><br><br><p><style>.container{margin-top: 60px;background-color: rgba(62, 128, 0, 0.363);color: black;margin-left: 20px;box-shadow: 10px 10px gray;}</style></p></div>' + str(score)
-                )
-            elif values[5] == answers[5]:
-                score +=30
-                return HttpResponse(
-                    '<div class="container p-5 mb-5 rounded"><h3>Score</h3><br><br><p><style>.container{margin-top: 60px;background-color: rgba(62, 128, 0, 0.363);color: black;margin-left: 20px;box-shadow: 10px 10px gray;}</style></p></div>' + str(score)
-                )
-            elif values[6] == answers[6]:
-                score +=35
-                return HttpResponse(
-                    '<div class="container p-5 mb-5 rounded"><h3>Score</h3><br><br><p><style>.container{margin-top: 60px;background-color: rgba(62, 128, 0, 0.363);color: black;margin-left: 20px;box-shadow: 10px 10px gray;}</style></p></div>' + str(score)
-                )
-            elif values[7] == answers[7]:
-                score +=40
-                return HttpResponse(
-                    '<div class="container p-5 mb-5 rounded"><h3>Score</h3><br><br><p><style>.container{margin-top: 60px;background-color: rgba(62, 128, 0, 0.363);color: black;margin-left: 20px;box-shadow: 10px 10px gray;}</style></p></div>' + str(score)
-                )
-            elif values[8] == answers[8]:
-                score +=45
-                return HttpResponse(
-                    '<div class="container p-5 mb-5 rounded"><h3>Score</h3><br><br><p><style>.container{margin-top: 60px;background-color: rgba(62, 128, 0, 0.363);color: black;margin-left: 20px;box-shadow: 10px 10px gray;}</style></p></div>' + str(score)
-                )
-            elif values[9] == answers[9]:
-                score +=50
-                return HttpResponse(
-                    '<div class="container p-5 mb-5 rounded"><h3>Score</h3><br><br><p><style>.container{margin-top: 60px;background-color: rgba(62, 128, 0, 0.363);color: black;margin-left: 20px;box-shadow: 10px 10px gray;}</style></p></div>' + str(score)
-                )
-            else:
-                return HttpResponse(
-                    'You did not reach the cut off mark'
-                )
+            for value in values:
+                for answer in answers:
+                    
+                    if value == answer:
+                        score = 0
+                        score +=5
+                        # Using the HTTPResponse to return strings
+                        print(answer)
+                
+                print(value, "second")
+            return HttpResponse(
+                '<div class="container p-5 mb-5 rounded"><h3>Score</h3><br><br><p><style>.container{margin-top: 60px;background-color: rgba(62, 128, 0, 0.363);color: black;margin-left: 20px;box-shadow: 10px 10px gray;}</style></p></div>' + str(score)
+            )
+                
+                
     else:
         
         return render(request, 'index.html', {'your_score': your_score})
