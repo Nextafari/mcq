@@ -21,37 +21,18 @@ def home_view(request):
             q10 = request.POST.get("question-10")
             values = [q1, q2, q3, q4, q5, q6, q7, q8, q9, q10]
             answers = [
-                'answer-1', 'answer-2', 'answer-3', 'answer-4', 'answer-1', 'answer-2', 'answer-3',
-                'answer-4', 'answer-1', 'answer-2'
+                '1', '2', '3', '4', '1', '2', '3',
+                '4', '1', '2'
             ]
             print(values, "first")
-            print(answers[8:10])
             for value in values:
-                for answer in value:
-                    score = 0
-                    if answer[0] == value[0]:    
-                        score +=5
-                    if answer[:1] == value[:1]:    
-                        score +=5
-                    if answer[:2] == answer[:2]:   
-                        score +=5
-                    if answer[:3] == answer[:3]:   
-                        score +=5
-                    if answer[:4] == answer[:4]:
-                        score +=5
-                    if answer[:5] == answer[:5]: 
-                        score +=5
-                    if answer[:6] == answer[:6]:    
-                        score +=5
-                    if answer[:7] == answer[:7]:    
-                        score +=5
-                    if answer[:8] == answer[:8]:    
-                        score +=5
-                    if value[:9] == answer[:9]:    
-                        score +=5
-                        # Using the HTTPResponse to return strings
-                    
-                # print(value, answer, "second")
+                score = 0  
+                if value in answers:
+                    print('yes')
+                    for value in answers:
+                       score +=5
+                        
+                print(value, "second")
             return HttpResponse(
                 '<div class="container p-5 mb-5 rounded"><h3>Score</h3><br><br><p><style>.container{margin-top: 60px;background-color: rgba(62, 128, 0, 0.363);color: black;margin-left: 20px;box-shadow: 10px 10px gray;}</style></p></div>' + str(score)
             )               
