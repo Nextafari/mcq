@@ -24,20 +24,15 @@ def home_view(request):
                 '1', '2', '3', '4', '1', '2', '3',
                 '4', '1', '2'
             ]
-            print(values, "first")
+            # print(values, "first")
             score = 0
-            for value in values:  
+            for value in values:
                 if value in answers:
-                    print('yes')
                     score +=5
-                    print(score)
-                        
-                print(value, "second")
             return HttpResponse(
                 '<div class="container p-5 mb-5 rounded"><h3>Score</h3><br><br><p><style>.container{margin-top: 60px;background-color: rgba(62, 128, 0, 0.363);color: black;margin-left: 20px;box-shadow: 10px 10px gray;}</style></p></div>' + str(score)
             )               
-    else:
-        
+    else:        
         return render(request, 'index.html', {'your_score': your_score})
 
 
